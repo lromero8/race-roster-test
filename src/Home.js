@@ -14,7 +14,7 @@ const Home = () => {
 
             </div>
 
-            {/* <section> */}
+            <section>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-xl-4">
@@ -36,13 +36,20 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            {/* </section> */}
+            </section>
 
 
-            {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <section className="videoSection">
+                <div class="resp-container">
+                    <iframe class="resp-iframe" src="https://www.youtube.com/embed/e0GHi9mf-54" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+                </div>
+            </section>
+
+
             <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
     );
 }
