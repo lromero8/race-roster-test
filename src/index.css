@@ -115,5 +115,21 @@ h3{
   text-align: center;
   text-transform: uppercase;
   color: #303030;
+}
 
+/* Heart Lamps Section  */
+.lampImg{
+  width: 380px;
+  height: 288px;
+}
+
+.featureLink{
+  border-bottom: 3px solid #3380FF;
+  padding-bottom: 3px;
+  font-weight: 600;
+}
+
+.featureLink:hover{
+  text-decoration: none;
+  color: #3380FF;
 }
