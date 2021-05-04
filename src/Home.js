@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import heartLamps from './Assets/heart-lamps.png'
 import eventPicture from './Assets/event-picture.png'
-import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
     const [name, setName] = useState('');
@@ -14,6 +16,7 @@ const Home = () => {
     const [phone_invalid, setPhoneInvalid] = useState(false)
 
     const [is_form_valid, setFormValid] = useState(true)
+    const [is_form_sent, setFormSent] = useState(false)
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,13 +24,14 @@ const Home = () => {
 
         let temp = validate()
         setFormValid(temp)
-
+        
         if (temp) {
             console.log(form)
             setName('')
             setLastname('')
             setEmail('')
             setPhone('')
+            setFormSent(true)
         }
     }
     
@@ -37,9 +41,113 @@ const Home = () => {
         !email? setEmailInvalid(true) : setEmailInvalid(false);
         !phone? setPhoneInvalid(true) : setPhoneInvalid(false);
 
+
         return !name || !lastname || !email || !phone? false : true;
 
     }
+
+    const demoForm = () => {
+        return (
+            <div className="demo">
+                
+                { !is_form_valid && <div className="errorMessage mb-4"><strong>HEADS UP!</strong> There are errors in the form below</div>}
+
+                <form onSubmit={handleSubmit}>
+
+                    <div className="form-row">
+                        <div className="form-group col-md-12">
+                            <label htmlFor="inputName">First name <strong className="asterik">*</strong></label>
+                            <input 
+                                type="text"
+                                className={'form-control ' + (name_invalid ? 'is-invalid' : '')}
+                                id="inputName"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                            <div className="invalid-feedback">
+                                First name is required
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-group col-md-12">
+                            <label htmlFor="inputLastname">Last name <strong className="asterik">*</strong></label>
+                            <input 
+                                type="text"
+                                className={'form-control ' + (lastname_invalid ? 'is-invalid' : '')}
+                                id="inputLastname"
+                                value={lastname}
+                                onChange={(e) => setLastname(e.target.value)}
+                            />
+                            <div className="invalid-feedback">
+                                Last name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-group col-md-12">
+                            <label htmlFor="inputEmail">Email <strong className="asterik">*</strong></label>
+                            <input 
+                                type="email"
+                                className={'form-control ' + (email_invalid ? 'is-invalid' : '')}
+                                id="inputEmail"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <div className="invalid-feedback">
+                                Expected email format: example@example.com
+                            </div>
+                            <div className="invalid-feedback">
+                                Email name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-group col-md-12">
+                            <label htmlFor="inputPhone">Phone number <strong className="asterik">*</strong></label>
+                            <input 
+                                type="phone"
+                                className={'form-control ' + (phone_invalid ? 'is-invalid' : '')}
+                                id="inputPhone"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                            />
+                            <div className="invalid-feedback">
+                                Phone number is required
+                            </div>
+                        </div>
+                    </div>                                                         
+
+                    <button type="submit" className="submitButton">Sign up</button>
+
+                </form>
+
+            </div>
+        )
+        
+    }
+    
+    const successMessage = () => {
+        return(
+            <div className="container mt-5">
+                <div className="row">
+                    <div className="col">
+                        <div className="icon"><FontAwesomeIcon icon={faCheckCircle} size="9x" className="checkIcon"/></div>
+                    </div>
+                    <div className="col">
+                        <h2>Demo request sent!</h2>
+                        <p>Someone will reach out to schedule your demo within the next 48 business hours</p>
+                        <a className="customeLink" href="/#">Request another demo</a>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="home">
 
@@ -71,7 +179,7 @@ const Home = () => {
                                 home and having a snow-covered dinner. Just pretend you are a whisper floating across a mountain. Zip.
                                 That easy.
                             </p>
-                            <a className="featureLink" href="/#">View full feature list</a>
+                            <a className="customeLink" href="/#">View full feature list</a>
                         </div>
                     </div>
                 </div>
@@ -84,22 +192,26 @@ const Home = () => {
                 </div>
             </section>
 
-            <section>
+            <section className="formSection">
                 <div className="container">
-                    <div className="row">
+                    <div className="row d-flex align-items-center">
                         <div className="col text-left">
 
-                            <div className="demo">
-                                
-                                <h2>Book a demo</h2>
+                            <h2 className="mb-4">Book a demo</h2>
 
-                                { !is_form_valid && <div className="errorMessage">HEADS UP! There are errors in the form below</div>}
+                            { is_form_sent ? successMessage() : demoForm() }
+
+                            {/* <div className="demo">
+                                
+                                <h2 className="mb-4">Book a demo</h2>
+
+                                { !is_form_valid && <div className="errorMessage mb-4"><strong>HEADS UP!</strong> There are errors in the form below</div>}
 
                                 <form onSubmit={handleSubmit}>
 
                                     <div className="form-row">
                                         <div className="form-group col-md-12">
-                                            <label htmlFor="inputName">First name</label>
+                                            <label htmlFor="inputName">First name <strong className="asterik">*</strong></label>
                                             <input 
                                                 type="text"
                                                 className={'form-control ' + (name_invalid ? 'is-invalid' : '')}
@@ -116,7 +228,7 @@ const Home = () => {
 
                                     <div className="form-row">
                                         <div className="form-group col-md-12">
-                                            <label htmlFor="inputLastname">Last name</label>
+                                            <label htmlFor="inputLastname">Last name <strong className="asterik">*</strong></label>
                                             <input 
                                                 type="text"
                                                 className={'form-control ' + (lastname_invalid ? 'is-invalid' : '')}
@@ -132,7 +244,7 @@ const Home = () => {
 
                                     <div className="form-row">
                                         <div className="form-group col-md-12">
-                                            <label htmlFor="inputEmail">Email</label>
+                                            <label htmlFor="inputEmail">Email <strong className="asterik">*</strong></label>
                                             <input 
                                                 type="email"
                                                 className={'form-control ' + (email_invalid ? 'is-invalid' : '')}
@@ -151,7 +263,7 @@ const Home = () => {
 
                                     <div className="form-row">
                                         <div className="form-group col-md-12">
-                                            <label htmlFor="inputPhone">Phone number</label>
+                                            <label htmlFor="inputPhone">Phone number <strong className="asterik">*</strong></label>
                                             <input 
                                                 type="phone"
                                                 className={'form-control ' + (phone_invalid ? 'is-invalid' : '')}
@@ -165,15 +277,15 @@ const Home = () => {
                                         </div>
                                     </div>                                                         
 
-                                    <button type="submit" className="btn btn-primary">Sign in</button>
+                                    <button type="submit" className="submitButton">Sign up</button>
 
                                 </form>
 
-                            </div>
+                            </div> */}
 
 
                         </div>
-                        <div className="col">
+                        <div className="col d-flex justify-content-md-end justify-content-sm-end mt-5">
                             <img className="event img" src={eventPicture} alt="event img"/>
                         </div>
                     </div>
@@ -181,10 +293,10 @@ const Home = () => {
             </section>
 
 
+            {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
         </div>
     );
 }

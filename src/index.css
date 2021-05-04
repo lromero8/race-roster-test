@@ -123,13 +123,13 @@ h3{
   height: 288px;
 }
 
-.featureLink{
+.customeLink{
   border-bottom: 3px solid #3380FF;
   padding-bottom: 3px;
   font-weight: 600;
 }
 
-.featureLink:hover{
+.customeLink:hover{
   text-decoration: none;
   color: #3380FF;
 }
@@ -155,3 +155,101 @@ h3{
 @media only screen and (max-width: 600px) {.resp-iframe {max-width: 75%;}}
 
 /* Form Section */
+
+.formSection{
+  /* height: 800px; */
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.errorMessage{
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+  letter-spacing: 0.375px;
+
+  /* Danger */
+  background: #D0021B;
+  color: #fff;
+  padding: 15px;
+  /* Danger border */
+  border: 4px solid #E78490;
+  box-sizing: border-box;
+}
+
+label{
+  color: #404040;
+  font-weight: bold;
+}
+
+.asterik{
+  color: #D0021B;
+}
+
+.container .row .col .demo .form-row .form-group .form-control{
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  box-sizing: border-box;
+  height: 50px;
+
+  margin: 10px 0px;
+}
+
+.container .row .col .demo .form-row .form-group .is-invalid{
+  border: 1px solid #D0021B;
+}
+
+.invalid-feedback{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height */
+  
+  letter-spacing: 0.507812px;
+}
+
+.submitButton{
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #303030;
+
+  border: none;
+  width: 136px;
+  height: 52px;
+
+  background: #7ED321;  
+}
+
+.icon {
+  background-color: #fff;
+  border: 1px solid #eee;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  transition: all .2s;
+}
+
+.checkIcon{
+  color: #67E2B3;
+  display: block;
+  background: -webkit-linear-gradient(221.55deg, #67E2B3 3.68%, #2DCDD8 97.11%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background: linear-gradient(221.55deg, #67E2B3 3.68%, #2DCDD8 97.11%); */
+}
