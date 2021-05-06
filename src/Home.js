@@ -2,7 +2,10 @@ import { useState } from 'react'
 import heartLamps from './Assets/heart-lamps.png'
 import eventPicture from './Assets/event-picture.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCheckCircle,  faPhoneAlt, faEnvelope, faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
+import { faCopyright } from '@fortawesome/free-regular-svg-icons'
+import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/free-brands-svg-icons' 
+import Map from './Map'
 
 const Home = () => {
     const [name, setName] = useState('');
@@ -17,6 +20,9 @@ const Home = () => {
 
     const [is_form_valid, setFormValid] = useState(true)
     const [is_form_sent, setFormSent] = useState(false)
+
+    const currentYear = new Date().getFullYear()
+    
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -148,6 +154,7 @@ const Home = () => {
         )
     }
 
+
     return (
         <div className="home">
 
@@ -157,7 +164,7 @@ const Home = () => {
 
                 <h3 className="mb-4">ACME Events Inc. makes making beautiful event landing pages a DIY adventure.</h3>
 
-                <input className="demoButton" type="button" value="BOOK A DEMO"/>
+                <a href="#formAnchor"><input className="demoButton" type="button" value="BOOK A DEMO"/></a>
 
             </div>
 
@@ -192,111 +199,72 @@ const Home = () => {
                 </div>
             </section>
 
+            <a href="/#" name="formAnchor"></a>
+            
             <section className="formSection">
                 <div className="container">
                     <div className="row d-flex align-items-center">
-                        <div className="col text-left">
+                        <div className="col col-md-6 text-left">
 
                             <h2 className="mb-4">Book a demo</h2>
 
                             { is_form_sent ? successMessage() : demoForm() }
 
-                            {/* <div className="demo">
-                                
-                                <h2 className="mb-4">Book a demo</h2>
-
-                                { !is_form_valid && <div className="errorMessage mb-4"><strong>HEADS UP!</strong> There are errors in the form below</div>}
-
-                                <form onSubmit={handleSubmit}>
-
-                                    <div className="form-row">
-                                        <div className="form-group col-md-12">
-                                            <label htmlFor="inputName">First name <strong className="asterik">*</strong></label>
-                                            <input 
-                                                type="text"
-                                                className={'form-control ' + (name_invalid ? 'is-invalid' : '')}
-                                                id="inputName"
-                                                value={name}
-                                                onChange={(e) => setName(e.target.value)}
-                                            />
-                                            <div className="invalid-feedback">
-                                                First name is required
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div className="form-row">
-                                        <div className="form-group col-md-12">
-                                            <label htmlFor="inputLastname">Last name <strong className="asterik">*</strong></label>
-                                            <input 
-                                                type="text"
-                                                className={'form-control ' + (lastname_invalid ? 'is-invalid' : '')}
-                                                id="inputLastname"
-                                                value={lastname}
-                                                onChange={(e) => setLastname(e.target.value)}
-                                            />
-                                            <div className="invalid-feedback">
-                                                Last name is required
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="form-row">
-                                        <div className="form-group col-md-12">
-                                            <label htmlFor="inputEmail">Email <strong className="asterik">*</strong></label>
-                                            <input 
-                                                type="email"
-                                                className={'form-control ' + (email_invalid ? 'is-invalid' : '')}
-                                                id="inputEmail"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
-                                            />
-                                            <div className="invalid-feedback">
-                                                Expected email format: example@example.com
-                                            </div>
-                                            <div className="invalid-feedback">
-                                                Email name is required
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="form-row">
-                                        <div className="form-group col-md-12">
-                                            <label htmlFor="inputPhone">Phone number <strong className="asterik">*</strong></label>
-                                            <input 
-                                                type="phone"
-                                                className={'form-control ' + (phone_invalid ? 'is-invalid' : '')}
-                                                id="inputPhone"
-                                                value={phone}
-                                                onChange={(e) => setPhone(e.target.value)}
-                                            />
-                                            <div className="invalid-feedback">
-                                                Phone number is required
-                                            </div>
-                                        </div>
-                                    </div>                                                         
-
-                                    <button type="submit" className="submitButton">Sign up</button>
-
-                                </form>
-
-                            </div> */}
-
-
                         </div>
-                        <div className="col d-flex justify-content-md-end justify-content-sm-end mt-5">
-                            <img className="event img" src={eventPicture} alt="event img"/>
+                        <div className="col-sm-12 col-md-6 d-flex justify-content-md-end justify-content-sm-end mt-5">
+                            <img className="img-fluid" src={eventPicture} alt="event img"/>
                         </div>
                     </div>
                 </div>
             </section>
 
 
-            {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
+            <section className="mapSection mt-5">
+                <div className="container pt-5 pb-5">
+                    <div className="row">
+                        <div className="col-md-12 col-lg-3 text-left">
+                            <h6>Features</h6>
+                            <p>Event organizer tools</p>
+                            <p>Timer tools</p>
+                            <p>Charity co-ordinator tools</p>
+                            <p>Participant experience</p>
+                        </div>
+                        <div className="col-md-12 col-lg-3 text-left">
+                            <h6>Tools</h6>
+                            <p>Dashboard maker</p>
+                            <p>Data &amp; analytics</p>
+                            <p>Email marketing tool</p>
+                            <p>Social promotion tool</p>
+                        </div>
+                        <div className="col-md-12 col-lg-3 text-left">
+                            <h6>Contact</h6>
+                            <p><FontAwesomeIcon icon={faPhoneAlt} size="sm"/> 1-888-555-5555</p>
+                            <p><FontAwesomeIcon icon={faEnvelope} size="sm"/> example@example.com</p>
+                            <p><FontAwesomeIcon icon={faMapMarkerAlt} size="sm"/> 123 Fake Street, London, ON</p>
+                            <p>A1B 2C3</p>
+                        </div>
+                        <div className="col-md-12 col-lg-3">
+                            <Map/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <div className="container">
+                    <div className="row d-flex align-items-center">
+                        <div className="col-6 col-md-4 d-flex justify-content-start pt-2">
+                            <p><FontAwesomeIcon icon={faCopyright} size="xs"/> Copyright Acme Inc. {currentYear}</p>
+                        </div>
+                        <div className="col-6 col-md-4 ml-md-auto d-flex justify-content-end">
+                            <FontAwesomeIcon icon={faFacebookSquare} size="2x" className="socialIcons"/>
+                            <FontAwesomeIcon icon={faTwitterSquare} size="2x" className="socialIcons"/>
+                            <FontAwesomeIcon icon={faInstagram} size="2x" className="socialIcons"/>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
         </div>
     );
 }

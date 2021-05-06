@@ -253,3 +253,73 @@ label{
   -webkit-text-fill-color: transparent;
   /* background: linear-gradient(221.55deg, #67E2B3 3.68%, #2DCDD8 97.11%); */
 }
+
+/* Map Section */
+
+.mapSection{
+  background: #F5F5F5;
+}
+
+.mapSection h6{
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  letter-spacing: 0.291667px;
+  color: #303030;
+}
+
+.mapSection p{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  letter-spacing: 0.291667px;
+  color: #303030;
+  margin-bottom: 4%;
+}
+
+.gmnoprint a, .gmnoprint span {
+  display:none;
+}
+
+.gmnoprint div {
+  background:none !important;
+}
+
+img[src="http://maps.gstatic.com/mapfiles/api-3/images/google_white2.png"], a[href^="http://maps.google.com/maps"]{
+  display:none !important;
+}
+
+/* Footer Section */
+
+footer{
+  background: #303030;
+  color: #FFF;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  letter-spacing: 0.291667px;
+}
+
+footer .container{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+footer p{
+  margin-left: 5px;
+}
+
+.socialIcons{
+  margin-left: 20px;
+}
