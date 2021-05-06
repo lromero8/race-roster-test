@@ -3,13 +3,15 @@
 
 /* Navbar Styles */
 
-.navbar{
+.App{
   font-family: 'Open Sans', sans-serif;
+}
+
+.navbar{
   background: #303030;
 }
 
 .loginButton{
-    font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -72,9 +74,8 @@
   background-size: cover;
 }
 
-h1{
+.home h1{
   /* H1 */
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
@@ -84,9 +85,8 @@ h1{
   color: #303030;
 }
 
-h3{
+.home h3{
   /* H3 - Subheader */
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
   font-size: 26px;
@@ -107,7 +107,6 @@ h3{
   padding: 15px 35px;
 
   /* Text */
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -121,6 +120,23 @@ h3{
 .lampImg{
   width: 380px;
   height: 288px;
+}
+
+.lampSection h2{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 41px;
+  /* identical to box height */
+}
+
+.lampSection p{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
 .customeLink{
@@ -158,14 +174,13 @@ h3{
 
 .formSection{
   /* height: 800px; */
-  margin-top: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   display: flex;
   align-items: center;
 }
 
 .errorMessage{
-
-  font-family: 'Open Sans';
   font-style: normal;
   font-size: 18px;
   line-height: 25px;
@@ -204,7 +219,6 @@ label{
 }
 
 .invalid-feedback{
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
@@ -215,8 +229,6 @@ label{
 }
 
 .submitButton{
-
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -254,6 +266,13 @@ label{
   /* background: linear-gradient(221.55deg, #67E2B3 3.68%, #2DCDD8 97.11%); */
 }
 
+.formSection h2{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 41px;
+}
+
 /* Map Section */
 
 .mapSection{
@@ -262,25 +281,21 @@ label{
 
 .mapSection h6{
   text-transform: uppercase;
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
   /* identical to box height */
   letter-spacing: 0.291667px;
-  color: #303030;
 }
 
 .mapSection p{
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
   /* identical to box height */
   letter-spacing: 0.291667px;
-  color: #303030;
   margin-bottom: 4%;
 }
 
@@ -302,7 +317,6 @@ footer{
   background: #303030;
   color: #FFF;
 
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
   font-size: 14px;

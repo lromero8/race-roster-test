@@ -63,7 +63,8 @@ const Home = () => {
                     <div className="form-row">
                         <div className="form-group col-md-12">
                             <label htmlFor="inputName">First name <strong className="asterik">*</strong></label>
-                            <input 
+                            <input
+                                aria-required="true"
                                 type="text"
                                 className={'form-control ' + (name_invalid ? 'is-invalid' : '')}
                                 id="inputName"
@@ -80,7 +81,8 @@ const Home = () => {
                     <div className="form-row">
                         <div className="form-group col-md-12">
                             <label htmlFor="inputLastname">Last name <strong className="asterik">*</strong></label>
-                            <input 
+                            <input
+                                aria-required="true"
                                 type="text"
                                 className={'form-control ' + (lastname_invalid ? 'is-invalid' : '')}
                                 id="inputLastname"
@@ -96,7 +98,8 @@ const Home = () => {
                     <div className="form-row">
                         <div className="form-group col-md-12">
                             <label htmlFor="inputEmail">Email <strong className="asterik">*</strong></label>
-                            <input 
+                            <input
+                                aria-required="true"
                                 type="email"
                                 className={'form-control ' + (email_invalid ? 'is-invalid' : '')}
                                 id="inputEmail"
@@ -115,7 +118,8 @@ const Home = () => {
                     <div className="form-row">
                         <div className="form-group col-md-12">
                             <label htmlFor="inputPhone">Phone number <strong className="asterik">*</strong></label>
-                            <input 
+                            <input
+                                aria-required="true"
                                 type="phone"
                                 className={'form-control ' + (phone_invalid ? 'is-invalid' : '')}
                                 id="inputPhone"
@@ -128,7 +132,7 @@ const Home = () => {
                         </div>
                     </div>                                                         
 
-                    <button type="submit" className="submitButton">Sign up</button>
+                    <button aria-describedby="requestDemo" type="submit" className="submitButton">Sign up</button>
 
                 </form>
 
@@ -141,10 +145,10 @@ const Home = () => {
         return(
             <div className="container mt-5">
                 <div className="row">
-                    <div className="col">
+                    <div className="col-4">
                         <div className="icon"><FontAwesomeIcon icon={faCheckCircle} size="9x" className="checkIcon"/></div>
                     </div>
-                    <div className="col">
+                    <div className="col-8">
                         <h2>Demo request sent!</h2>
                         <p>Someone will reach out to schedule your demo within the next 48 business hours</p>
                         <a className="customeLink" href="/#">Request another demo</a>
@@ -168,7 +172,7 @@ const Home = () => {
 
             </div>
 
-            <section>
+            <section className="lampSection">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-xl-4">
@@ -200,7 +204,7 @@ const Home = () => {
             </section>
 
             <a href="/#" name="formAnchor"></a>
-            
+
             <section className="formSection">
                 <div className="container">
                     <div className="row d-flex align-items-center">
