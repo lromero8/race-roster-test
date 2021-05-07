@@ -1,6 +1,21 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
+
+:root {
+  --primary-brand-color: #9013FE;
+  --primary-gradient-color: linear-gradient(41.55deg, #941BFF 5.92%, #F185CE 97.55%);
+  --secondary-brand-color: #2DCDD8;
+  --secondary-gradient-color: linear-gradient(221.55deg, #67E2B3 3.68%, #2DCDD8 97.11%);
+  --succes: #7ED321;
+  --warning: #F96C44;
+  --danger: #D0021B;
+  --default: #ECEFF1;
+  --font-color: #303030;
+}
+
+
+
 /* Navbar Styles */
 
 .App{
@@ -8,7 +23,7 @@
 }
 
 .navbar{
-  background: #303030;
+  background: var(--font-color);
 }
 
 .loginButton{
@@ -25,15 +40,16 @@
 
 .loginButton:hover{
   text-decoration: none;
-  color: #9013FE;
+  color: var(--primary-brand-color);
 }
 
 .signupButton{
   
   /* Primary - Gradient */
-  background: linear-gradient(41.55deg, #941BFF 5.92%, #F185CE 97.55%);
+  background: var(--primary-gradient-color);
   border: none;
   border-radius: 20px;
+
 
   /* Inside Auto Layout */
   flex: none;
@@ -82,7 +98,7 @@
   line-height: 49px;
   /* identical to box height */
   text-align: center;
-  color: #303030;
+  color: var(--font-color);
 }
 
 .home h3{
@@ -96,12 +112,12 @@
   max-width: 640px;
   margin: 0 auto;
 
-  color: #303030;
+  color: var(--font-color);
 }
 
 .demoButton{
 
-  background: linear-gradient(221.55deg, #67E2B3 3.68%, #2DCDD8 97.11%);
+  background: var(--secondary-gradient-color);
   border: none;
   border-radius: 26px;
   padding: 15px 35px;
@@ -113,7 +129,7 @@
   line-height: 22px;
   text-align: center;
   text-transform: uppercase;
-  color: #303030;
+  color: var(--font-color);
 }
 
 /* Heart Lamps Section  */
@@ -153,7 +169,7 @@
 /* Video Section */
 
 .videoSection{
-  background-color: #ECEFF1;
+  background-color: var(--default);
   height: 526px;
   margin-top: 5%;
 
@@ -188,7 +204,7 @@
   letter-spacing: 0.375px;
 
   /* Danger */
-  background: #D0021B;
+  background: var(--danger);
   color: #fff;
   padding: 15px;
   /* Danger border */
@@ -202,7 +218,7 @@ label{
 }
 
 .asterik{
-  color: #D0021B;
+  color: var(--danger);
 }
 
 .container .row .col .demo .form-row .form-group .form-control{
@@ -215,7 +231,7 @@ label{
 }
 
 .container .row .col .demo .form-row .form-group .is-invalid{
-  border: 1px solid #D0021B;
+  border: 1px solid var(--danger);
 }
 
 .invalid-feedback{
@@ -235,13 +251,13 @@ label{
   line-height: 22px;
   text-align: center;
   text-transform: uppercase;
-  color: #303030;
+  color: var(--font-color);
 
   border: none;
   width: 136px;
   height: 52px;
 
-  background: #7ED321;  
+  background: var(--succes);  
 }
 
 .icon {
@@ -314,7 +330,7 @@ img[src="http://maps.gstatic.com/mapfiles/api-3/images/google_white2.png"], a[hr
 /* Footer Section */
 
 footer{
-  background: #303030;
+  background: var(--font-color);
   color: #FFF;
 
   font-style: normal;
